@@ -1,0 +1,6 @@
+<h1><%= "Article #{@article.title}" %></h1>
+  <p>
+    <%= "The article's title is #{@article.title}. It's description is #{@article.description}" %>
+  </p>
+  <%= link_to "Home", articles_path %>
+<%= link_to "Create another article", new_article_path  %>
