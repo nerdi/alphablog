@@ -3,5 +3,6 @@
     <%= "The article's title is #{@article.title}. It's description is #{@article.description}" %>
   </p>
   <%= link_to "Home", articles_path %>
-<%= link_to "Create another article", new_article_path  %>
-<%= link_to "Edit the article", edit_article_path %>
+  <%= link_to "Create another article", new_article_path  %>
+  <%= link_to "Edit the article", edit_article_path %>
+  <%= link_to "Destroy the article", article_path(@article), method: :delete, data:{confirm: "Are you sure?"} %>
