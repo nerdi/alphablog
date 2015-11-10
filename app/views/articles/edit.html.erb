@@ -1,12 +1,15 @@
 <h1>Edit article <%= @article.id %></h1>
 <% if @article.errors.any? %>
   <h2>The following errors prevented the article from being edited</h2>
+  <div class="">
+
   <% @article.errors.full_messages.each do |error| %>
     <ul>
       <li><%= error %></li>
     </ul>
+  </div>
   <% end %>
 <% end %>
 <%= render 'form' %>
-<%= link_to "Home", articles_path %>
+<%= link_to "Home", articles_path %> | 
 <%= link_to "Destroy the article", article_path(@article), method: :delete, data:{confirm: "Are you sure?"} %>
