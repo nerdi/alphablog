@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
   def create
     #debugger
     @article = Article.new(article_params)
-    @article.user = User.first #This should be replaced by self at some stage
+    @article.user = current_user
     @article.save
     if @article.save
       flash[:success] = "Article was succesfully created"
