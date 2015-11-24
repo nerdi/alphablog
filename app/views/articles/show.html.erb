@@ -22,12 +22,12 @@
   </h4>
   <hr>
   <%= simple_format(@article.description) %>
-  <% @article.article_categories.each do |article_category| %>
-    <ul class="listing">
-      <li><%= link_to article_category.category.name, article_category.category, class: "btn btn-xs btn-primary" %></li>
-    </ul>
-  <% end %>
 
+  <% if @article.categories.any? %>
+    <p>
+      Cartegories: <%= render @article.categories %>
+    </p>
+  <% end %>
 <div class="article-actions">
   <% if logged_in? && (@article.user == current_user || current_user.admin?) %>
     <%= link_to "Edit the article", edit_article_path(@article), class: "btn btn-xs btn-primary" %>
